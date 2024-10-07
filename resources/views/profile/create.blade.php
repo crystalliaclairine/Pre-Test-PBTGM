@@ -26,15 +26,30 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name">Nama</label>
-                                <input type="text" name="name" class="form-control">
+                                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror">
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="address">Alamat</label>
-                                <input type="text" name="address" class="form-control">
+                                <input type="text" name="address" class="form-control @error('address') is-invalid @enderror">
+                                @error('address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="extra">Ekskul</label>
-                                <input type="text" name="extra" class="form-control">
+                                <input type="text" name="extra" class="form-control @error('extra') is-invalid @enderror">
+                                @error('extra')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                     <button class="btn btn-outline-primary">Submit</button>

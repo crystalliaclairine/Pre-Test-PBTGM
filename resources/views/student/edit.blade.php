@@ -27,11 +27,21 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name">Nama</label>
-                                <input type="text" name="name" class="form-control" value="{{ $student->name }}">
+                                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $student->name }}">
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="grade">Kelas</label>
-                                <input type="text" name="grade" class="form-control" value="{{ $student->grade }}">
+                                <input type="text" name="grade" class="form-control @error('grade') is-invalid @enderror" value="{{ $student->grade }}">
+                                @error('grade')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
 
                             <div class="form-group">

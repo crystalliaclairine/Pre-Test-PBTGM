@@ -20,6 +20,11 @@ class ProfileController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name'=>'required|min3',
+            'address'=>'required|min3',
+            'extra'=>'required|min3',
+        ]);
         Profile::create([
             'name' => $request->get('name'),
             'address' => $request->get('address'),
@@ -36,6 +41,11 @@ class ProfileController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'name'=>'required|min3',
+            'address'=>'required|min3',
+            'extra'=>'required|min3',
+        ]);
         $profile = Profile::find($id);
         $profile->name = $request->get('name');
         $profile->address = $request->get('address');

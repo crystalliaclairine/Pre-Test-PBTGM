@@ -27,15 +27,30 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name">Nama</label>
-                                <input type="text" name="name" class="form-control" value="{{ $profile->name }}">
+                                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $profile->name }}">
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="address">Alamat</label>
-                                <input type="text" name="address" class="form-control" value="{{ $profile->address }}">
+                                <input type="text" name="address" class="form-control @error('address') is-invalid @enderror" value="{{ $profile->address }}">
+                                @error('address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="extra">Ekskul</label>
-                                <input type="text" name="extra" class="form-control" value="{{ $profile->extra }}">
+                                <input type="text" name="extra" class="form-control @error('extra') is-invalid @enderror" value="{{ $profile->extra }}">
+                                @error('extra')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
 
                             <div class="form-group">

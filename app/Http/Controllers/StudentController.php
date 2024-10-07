@@ -20,6 +20,10 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name'=>'required|min:3',
+            'grade'=>'required|min3'
+        ]);
         Student::create([
             'name' => $request->get('name'),
             'grade' => $request->get('grade'),
@@ -35,6 +39,10 @@ class StudentController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'name'=>'required|min3',
+            'grade'=>'required|min3'
+        ]);
         $student = Student::find($id);
         $student->name = $request->get('name');
         $student->grade = $request->get('grade');
